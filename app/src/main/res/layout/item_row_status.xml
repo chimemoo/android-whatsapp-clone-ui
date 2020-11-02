@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_status"
+    android:paddingHorizontal="15dp"
+    android:paddingVertical="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="?attr/selectableItemBackground">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_profile_status"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:padding="5dp"
+        android:src="@drawable/photo_user_1"
+        android:background="@drawable/ic_circle_active"
+        android:scaleType="centerCrop"/>
+    <RelativeLayout
+        android:paddingVertical="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/tv_name_user_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="User"/>
+        <TextView
+            android:id="@+id/tv_date_posted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_below="@id/tv_name_user_status"
+            android:text="Hari ini 19:28"/>
+    </RelativeLayout>
+</LinearLayout>

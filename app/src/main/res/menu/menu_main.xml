@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_search"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_search"
+        android:title="search"/>
+    <item
+        android:id="@+id/menu_create_group"
+        android:title="Grup baru"/>
+    <item
+        android:id="@+id/menu_create_channel"
+        android:title="Siaran baru"/>
+    <item
+        android:id="@+id/menu_wa_web"
+        android:title="WhatsApp Web"/>
+    <item
+        android:id="@+id/menu_stared_message"
+        android:title="Pesan berbintang"/>
+    <item
+        android:id="@+id/menu_setting"
+        android:title="Setelan"/>
+</menu>
