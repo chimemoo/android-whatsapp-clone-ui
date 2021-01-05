@@ -22,12 +22,14 @@ import java.util.ArrayList;
  */
 public class StatusFragment extends Fragment {
 
-    private RecyclerView rvStatus;
+    private RecyclerView rvStatusActive, rvStatusNoActive;
     private View mView;
     private ArrayList<StatusModel> listActiveStatus = new ArrayList<>();
+    private ArrayList<StatusModel> listNoActiveStatus = new ArrayList<>();
 
     public StatusFragment() {
         listActiveStatus.addAll(StatusData.getListDataActive());
+        listNoActiveStatus.addAll(StatusData.getListDataNoActive());
     }
 
 
@@ -35,15 +37,32 @@ public class StatusFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_status, container, false);
-        rvStatus = mView.findViewById(R.id.rv_status_list);
 
-        StatusAdapter statusAdapter = new StatusAdapter(listActiveStatus);
+        setStatusActive();
 
-        rvStatus.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rvStatus.setHasFixedSize(true);
-        rvStatus.setAdapter(statusAdapter);
+        setStatusNoActive();
 
         // Inflate the layout for this fragment
         return mView;
+    }
+
+    private void setStatusActive(){
+        rvStatusActive = mView.findViewById(R.id.rv_status_list);
+
+        StatusAdapter statusAdapter = new StatusAdapter(listActiveStatus);
+
+        rvStatusActive.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rvStatusActive.setHasFixedSize(true);
+        rvStatusActive.setAdapter(statusAdapter);
+    }
+
+    private void setStatusNoActive(){
+        rvStatusNoActive = mView.findViewById(R.id.rv_status_list_noactive);
+
+        StatusAdapter statusAdapter = new StatusAdapter(listNoActiveStatus);
+
+        rvStatusNoActive.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rvStatusNoActive.setHasFixedSize(true);
+        rvStatusNoActive.setAdapter(statusAdapter);
     }
 }

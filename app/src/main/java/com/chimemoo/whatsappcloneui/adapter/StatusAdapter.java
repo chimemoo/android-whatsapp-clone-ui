@@ -44,6 +44,12 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.ListViewHo
 
         holder.tvName.setText(statusModel.getName());
         holder.tvDatePosted.setText(statusModel.getTime());
+
+        if(statusModel.isType()){
+            holder.civProfile.setBackgroundResource(R.drawable.ic_circle_active);
+        } else {
+            holder.civProfile.setBackgroundResource(R.drawable.ic_circle_no);
+        }
     }
 
     @Override
